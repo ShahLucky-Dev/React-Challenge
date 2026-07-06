@@ -1,10 +1,12 @@
 function App() {
-  function showMsg() {
-    console.log("welcome to react");
+  function showname(name) {
+    console.log(name);
   }
   return (
     <div>
-      <button onClick={showMsg}>showMsg</button>
+      <button onClick={() => showname("lucky")}>lucky</button>
+      <button onClick={() => showname("ratan")}>ratan</button>
+      <button onClick={() => showname("shivlal")}>shivlal</button>
     </div>
   );
 }
