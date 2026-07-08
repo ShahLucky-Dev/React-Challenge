@@ -1,12 +1,10 @@
+import StudentCard from "./React-Practice/StudentCard";
 function App() {
-  function showname(name) {
-    console.log(name);
-  }
   return (
     <div>
-      <button onClick={() => showname("lucky")}>lucky</button>
-      <button onClick={() => showname("ratan")}>ratan</button>
-      <button onClick={() => showname("shivlal")}>shivlal</button>
+      <StudentCard name="Lucky" age={19} course="bca" />
+      <StudentCard name="ratan" age={20} course="bussines" />
+      <StudentCard name="shivlal" age={20} course="job" />
     </div>
   );
 }
