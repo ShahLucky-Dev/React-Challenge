@@ -1,10 +1,20 @@
-import StudentCard from "./React-Practice/StudentCard";
 function App() {
+  const students = [
+    { id: 1, name: "Lucky", age: 19 },
+    { id: 2, name: "ratan", age: 20 },
+    { id: 3, name: "shivlal", age: 21 },
+  ];
+
   return (
     <div>
-      <StudentCard name="Lucky" age={19} course="bca" />
-      <StudentCard name="ratan" age={20} course="bussines" />
-      <StudentCard name="shivlal" age={20} course="job" />
+      {students.map((student) => {
+        return (
+          <div key={student.id}>
+            <h1>{student.name}</h1>
+            <h2>{student.age}</h2>
+          </div>
+        );
+      })}
     </div>
   );
 }
