@@ -7,11 +7,11 @@ function App() {
   }
 
   function increase5() {
-    setCount(0);
+    setCount(count + 5);
   }
 
   function reset() {
-    setCount(count - count);
+    setCount(0);
   }
   return (
     <div>
