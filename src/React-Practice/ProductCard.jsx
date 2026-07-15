@@ -1,4 +1,18 @@
-import ProdunctCard from "./React-Practice/ProductCard";
+function ProdunctCard(props) {
+  return (
+    <div>
+      <h1>{props.name}</h1>
+      <h2>{props.price}</h2>
+      <h3>{props.company}</h3>
+    </div>
+  );
+}
+
+export default ProdunctCard;
+
+// app jsx
+
+/*import ProdunctCard from "./React-Practice/ProductCard";
 function App() {
   const products = [
     {
@@ -36,4 +50,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; */
