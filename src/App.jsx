@@ -1,37 +1,39 @@
-import ProdunctCard from "./React-Practice/ProductCard";
+import { useState } from "react";
+
 function App() {
-  const products = [
-    {
-      id: 1,
-      name: "Laptop",
-      price: 50000,
-      company: "Dell",
-    },
-    {
-      id: 2,
-      name: "Mouse",
-      price: 800,
-      company: "Logitech",
-    },
-    {
-      id: 3,
-      name: "Keyboard",
-      price: 1500,
-      company: "HP",
-    },
-  ];
+  const [show, setShowNext] = useState(false);
+  const [student, setStudent] = useState({
+    name: "lucky",
+    age: 19,
+    city: "surat",
+  });
+
+  function Nextstud() {
+    setStudent({
+      ...student,
+      name: "shiv",
+      age: 21,
+      city: "varodra",
+    });
+  }
+
+  function increaseAge() {
+    setStudent({
+      ...student,
+      age: student.age + 1,
+    });
+  }
+
+  function Show() {
+    setShowNext(!show);
+  }
   return (
     <div>
-      {products.map((item) => {
-        return (
-          <ProdunctCard
-            key={item.id}
-            name={item.name}
-            price={item.price}
-            company={item.company}
-          />
-        );
-      })}
+      <button onClick={Show}>{show ? "previous" : "next"}</button>
+      <button onClick={increaseAge}>increaseAge</button>
+      <h1>{student.name}</h1>
+      <h1>{student.age}</h1>
+      <h1>{student.city}</h1>
     </div>
   );
 }
