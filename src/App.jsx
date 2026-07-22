@@ -1,6 +1,7 @@
+import ToDoApp from "./React-Projects/To-Do-App";
+
 function App() {
-  const isPremium = true;
-  return <div>{isPremium && <button>Download</button>}</div>;
+  return <ToDoApp />;
 }
 
 export default App;
