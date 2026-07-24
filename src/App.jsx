@@ -1,19 +1,7 @@
-import { useState, useEffect } from "react";
+import ToDoApp from "./React-Projects/To-Do-App";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    console.log("Hello");
-  }, [count]);
-
-  return (
-    <div>
-      <h1>{count}</h1>
-
-      <button onClick={() => setCount(count + 1)}>+</button>
-    </div>
-  );
+  return <ToDoApp />;
 }
 
 export default App;
