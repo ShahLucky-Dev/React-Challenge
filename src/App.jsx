@@ -1,7 +1,15 @@
-import ToDoApp from "./React-Projects/To-Do-App";
+import { useState } from "react";
 
 function App() {
-  return <ToDoApp />;
+  const arr = [10, 20, 30, 40];
+
+  return (
+    <div>
+      {arr.filter((item) => {
+        return item >= 30;
+      })}
+    </div>
+  );
 }
 
 export default App;
