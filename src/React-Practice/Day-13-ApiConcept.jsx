@@ -1,11 +1,3 @@
-// fetch("URL")
-//   .then((response) => {
-//     return response.json();
-//   })
-//   .then((data) => {
-//     console.log(data);
-//   });
-
 import { useEffect, useState } from "react";
 import "./App.css";
 
@@ -24,19 +16,21 @@ function App() {
 
   return (
     <div>
-      {users.map((item) => {
-        return (
-          <div key={item.id}>
-            <h2>{item.firstName}</h2>
-            <img src={item.image} className="userImg" />
-            <p>{item.email}</p>
-            <p>{item.phone}</p>
-          </div>
-          // <h3>
-          //   {item.firstName}- {item.age} - {item.phone}
-          // </h3>
-        );
-      })}
+      <div className="cardsContainer">
+        {users.map((item) => {
+          return (
+            <div className="card" key={item.id}>
+              <h2>{item.firstName}</h2>
+              <img src={item.image} className="userImg" />
+              <p>{item.email}</p>
+              <p>{item.phone}</p>
+            </div>
+            // <h3>
+            //   {item.firstName}- {item.age} - {item.phone}
+            // </h3>
+          );
+        })}
+      </div>
     </div>
   );
 }
