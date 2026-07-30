@@ -3,6 +3,7 @@ import "./App.css";
 
 function App() {
   const [users, setUsers] = useState([]);
+  const [loading, setLoding] = useState(true);
 
   useEffect(() => {
     fetch("https://dummyjson.com/users")
@@ -11,8 +12,17 @@ function App() {
       })
       .then((data) => {
         setUsers(data.users);
+        setLoding(false);
+      })
+      .catch((error) => {
+        // if any error occure
+        console.log(error);
       });
   }, []);
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
 
   return (
     <div>
