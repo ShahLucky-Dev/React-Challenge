@@ -6,7 +6,17 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://dummyjson.com/users")
+    async function getUsers() {
+      const response = await fetch("https://dummyjson.com/users");
+      const data = await response.json();
+    }
+
+    getUsers();
+  }, []);
+
+  /*useEffect(() => {
+
+  fetch("https://dummyjson.com/users")
       .then((response) => {
         return response.json();
       })
@@ -21,7 +31,7 @@ function App() {
 
   if (loading) {
     return <h1>Loading...</h1>;
-  }
+  }*/
 
   return (
     <div>

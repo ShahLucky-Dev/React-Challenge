@@ -3,26 +3,35 @@ import "./App.css";
 
 function App() {
   const [users, setUsers] = useState([]);
-  const [loading, setLoding] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://dummyjson.com/users")
+    async function getUsers() {
+      const response = await fetch("https://dummyjson.com/users");
+      const data = await response.json();
+    }
+
+    getUsers();
+  }, []);
+
+  /*useEffect(() => {
+
+  fetch("https://dummyjson.com/users")
       .then((response) => {
         return response.json();
       })
       .then((data) => {
         setUsers(data.users);
-        setLoding(false);
+        setLoading(false);
       })
       .catch((error) => {
-        // if any error occure
         console.log(error);
       });
   }, []);
 
   if (loading) {
     return <h1>Loading...</h1>;
-  }
+  }*/
 
   return (
     <div>
