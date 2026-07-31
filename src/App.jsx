@@ -7,8 +7,14 @@ function App() {
 
   useEffect(() => {
     async function getUsers() {
-      const response = await fetch("https://dummyjson.com/users");
-      const data = await response.json();
+      try {
+        const response = await fetch("https://dummyjson.com/users");
+        const data = await response.json();
+        setUsers(data.users);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
     }
 
     getUsers();
@@ -27,11 +33,11 @@ function App() {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, []);*/
 
   if (loading) {
     return <h1>Loading...</h1>;
-  }*/
+  }
 
   return (
     <div>
