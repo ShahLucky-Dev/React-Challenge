@@ -16,6 +16,8 @@ function App() {
     });
   }
 
+  function handleClick() {}
+
   return (
     <div>
       <input
@@ -37,6 +39,8 @@ function App() {
         value={form.password}
         onChange={handleChange}
       />
+
+      <button onClick={handleClick}>Submit</button>
     </div>
   );
 }
