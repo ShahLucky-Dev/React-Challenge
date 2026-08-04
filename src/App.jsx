@@ -4,7 +4,7 @@ function App() {
   const [search, setSearch] = useState("");
   const users = ["lucky", "ratan", "shivlal", "khushbu", "sadhna", "payal"];
   const filteredUsers = users.filter((item) => {
-    item.toLowerCase().includes(search.toLowerCase());
+    return item.toLowerCase().includes(search.toLowerCase());
   });
 
   function handleSearch(e) {
@@ -16,7 +16,7 @@ function App() {
       <input type="text" value={search} onChange={handleSearch} />
 
       {filteredUsers.map((item) => {
-        return <h2>{search}</h2>;
+        return <h2>{item}</h2>;
       })}
     </div>
   );
