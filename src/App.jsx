@@ -1,22 +1,24 @@
 import { useState } from "react";
 
 function App() {
-  const [search, setSearch] = useState("");
-  const users = ["lucky", "ratan", "shivlal", "khushbu", "sadhna", "payal"];
-  const filteredUsers = users.filter((item) => {
-    return item.toLowerCase().includes(search.toLowerCase());
-  });
+  const [fruits, setFruits] = useState([]);
+  const [newfruit, setNewFruits] = useState("");
 
-  function handleSearch(e) {
-    setSearch(e.target.value);
+  function handleAdd() {
+    setFruits([...fruits, newfruit]);
+    setNewFruits("");
+  }
+
+  function handleChange(e) {
+    setNewFruits(e.target.value);
   }
 
   return (
     <div>
-      <input type="text" value={search} onChange={handleSearch} />
-
-      {filteredUsers.map((item) => {
-        return <h2>{item}</h2>;
+      <input type="text" value={newfruit} onChange={handleChange} />
+      <button onClick={handleAdd}>Add</button>
+      {fruits.map((item) => {
+        return <h1>{item}</h1>;
       })}
     </div>
   );
