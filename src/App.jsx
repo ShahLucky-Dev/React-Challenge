@@ -1,5 +1,5 @@
 import useFetch from "./React-Practice/useFetch";
-
+import "./App.css";
 function App() {
   const { data, loading, error } = useFetch("https://dummyjson.com/users");
 
@@ -14,7 +14,11 @@ function App() {
   return (
     <div>
       {data.users.map((item) => {
-        return <p key={item.id}>{item.firstName}</p>;
+        return (
+          <p className="name" key={item.id}>
+            {item.firstName}
+          </p>
+        );
       })}
     </div>
   );
