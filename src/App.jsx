@@ -1,26 +1,15 @@
-import useFetch from "./React-Practice/useFetch";
-import "./App.css";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import { Routes, Route } from "react-router-dom";
+
 function App() {
-  const { data, loading, error } = useFetch("https://dummyjson.com/users");
-
-  if (loading) {
-    return <h2>Loading...</h2>;
-  }
-
-  if (error) {
-    return <h2>Error loading data</h2>;
-  }
-
   return (
-    <div>
-      {data.users.map((item) => {
-        return (
-          <p className="name" key={item.id}>
-            {item.firstName}
-          </p>
-        );
-      })}
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+    </Routes>
   );
 }
 
