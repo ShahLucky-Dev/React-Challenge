@@ -4,3 +4,8 @@
   border: 1px dotted blueviolet;
   margin-bottom: 10px;
 }
+
+.active {
+  color: red;
+  font-weight: bold;
+}
