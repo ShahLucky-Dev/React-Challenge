@@ -3,6 +3,7 @@ function About() {
   return (
     <div>
       <Link to="/contact">Go to Contact</Link>
+      <Link to="/"> Go to Home</Link>
     </div>
   );
 }
