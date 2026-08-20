@@ -1,11 +1,28 @@
-.name {
-  height: 100px;
-  width: 100px;
-  border: 1px dotted blueviolet;
-  margin-bottom: 10px;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.active {
-  color: red;
-  font-weight: bold;
+#block {
+  height: fit-content;
+  width: fit-content;
+
+  border: 2px solid black;
+  border-radius: 12px;
+}
+
+#notes {
+  height: fit-content;
+  width: fit-content;
+  display: inline-table;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 12px;
+}
+
+#allnotes {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
