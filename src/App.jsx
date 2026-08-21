@@ -23,6 +23,8 @@ function App() {
     ]);
     (setTitle(""), setText(""));
   }
+
+  function handleDelete(index) {}
   return (
     <>
       <div id="block">
@@ -45,6 +47,7 @@ function App() {
             <div key={index} id="notes">
               <h1>{item.title}</h1>
               <p>{item.text}</p>
+              <button onClick={() => handleDelete(index)}>Delete</button>
             </div>
           );
         })}
