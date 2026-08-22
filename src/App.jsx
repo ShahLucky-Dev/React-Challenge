@@ -5,6 +5,7 @@ function App() {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
   const [notes, setNotes] = useState([]);
+  const [editIndex, setEditIndex] = useState(null);
 
   function titleChange(event) {
     setTitle(event.target.value);
@@ -24,7 +25,16 @@ function App() {
     (setTitle(""), setText(""));
   }
 
-  function handleDelete(index) {}
+  function handleDelete(index) {
+    const updatedNotes = notes.filter((item, i) => i !== index);
+    setNotes(updatedNotes);
+  }
+
+  function handleEdit(index) {
+    setEditIndex(index);
+    setTitle(notes[index].title);
+    setText(notes[index].text);
+  }
   return (
     <>
       <div id="block">
@@ -47,6 +57,7 @@ function App() {
             <div key={index} id="notes">
               <h1>{item.title}</h1>
               <p>{item.text}</p>
+              <button onClick={() => handleEdit(index)}>Edit</button>
               <button onClick={() => handleDelete(index)}>Delete</button>
             </div>
           );
