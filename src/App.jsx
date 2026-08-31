@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./App.css";
 
 function App() {
   const [count, setcount] = useState(0);
@@ -7,32 +8,36 @@ function App() {
     setcount(count + 1);
   }
 
-  function decrease() {
-    setcount(count - 1);
-  }
-
-  function plusFive() {
-    setcount(count + 5);
-  }
-
   function reset() {
     setcount(0);
   }
 
   if (count === 108) {
     setcount("mala completed");
+    return;
   }
   return (
     <div>
-      <pre> Shree Radhe</pre>
-      <h1>{count}</h1>
-      <button onClick={decrease}>-</button>
-
-      <button onClick={increace}>+</button>
-
-      <button onClick={plusFive}>+5</button>
-
-      <button onClick={reset}>reset</button>
+      <div className="head">
+        <h1>Shree Radhe 🙇‍♂️</h1>
+      </div>
+      <br />
+      <br />
+      <div className="container">
+        <h1 className="count">{count}</h1>
+        <br />
+        <div className="malabtn">
+          <button className="mala" onClick={increace}></button>
+        </div>
+        <br />
+        <br />
+        <div className="resetbtn">
+          <button className="reset" onClick={reset}>
+            reset
+          </button>
+        </div>
+        <footer>radhe radhe</footer>
+      </div>
     </div>
   );
 }
