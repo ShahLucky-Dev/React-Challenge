@@ -1,44 +1,31 @@
-import { useState } from "react";
-import "./App.css";
+// function App() {
+//   const fruits = ["apple", "mango", "pineapple", "grapes"];
+//   return (
+//     <div>
+//       {fruits.map((item, index) => {
+//         return <li key={index}>{item}</li>;
+//       })}
+//     </div>
+//   );
+// }
+
+// export default App;
 
 function App() {
-  const [count, setcount] = useState(0);
-
-  function increace() {
-    setcount(count + 1);
-  }
-
-  function reset() {
-    setcount(0);
-  }
-
-  if (count === 108) {
-    setcount("mala completed");
-    setcount(0);
-    return;
-  }
+  const users = [
+    { id: 1, name: "Lucky", age: 20 },
+    { id: 2, name: "Rahul", age: 21 },
+    { id: 3, name: "Amit", age: 19 },
+  ];
   return (
     <div>
-      <div className="head">
-        <h1>Shree Radhe 🙇‍♂️</h1>
-      </div>
-      <br />
-      <br />
-      <div className="container">
-        <h1 className="count">{count}</h1>
-        <br />
-        <div className="malabtn">
-          <button className="mala" onClick={increace}></button>
-        </div>
-        <br />
-        <br />
-        <div className="resetbtn">
-          <button className="reset" onClick={reset}>
-            reset
-          </button>
-        </div>
-        <footer>radhe radhe</footer>
-      </div>
+      {users.map((user) => {
+        return (
+          <p key={user.id}>
+            {user.name}-{user.age}
+          </p>
+        );
+      })}
     </div>
   );
 }
