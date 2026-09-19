@@ -14,6 +14,7 @@ function App() {
 
   if (count === 108) {
     setcount("mala completed");
+    setcount(0);
     return;
   }
   return (
