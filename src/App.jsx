@@ -1,53 +1,18 @@
-// function App() {
-//   const fruits = ["apple", "mango", "pineapple", "grapes"];
-//   return (
-//     <div>
-//       {fruits.map((item, index) => {
-//         return <li key={index}>{item}</li>;
-//       })}
-//     </div>
-//   );
-// }
-
-// export default App;
-
-// function App() {
-//   const users = [
-//     { id: 1, name: "Lucky", age: 20 },
-//     { id: 2, name: "Rahul", age: 21 },
-//     { id: 3, name: "Amit", age: 19 },
-//   ];
-//   return (
-//     <div>
-//       {users.map((user) => {
-//         return (
-//           <p key={user.id}>
-//             {user.name}-{user.age}
-//           </p>
-//         );
-//       })}
-//     </div>
-//   );
-// }
-
-// export default App;
-
 function App() {
-  const products = [
-    { id: 1, name: "Laptop", price: 50000 },
-    { id: 2, name: "Mouse", price: 500 },
-    { id: 3, name: "Keyboard", price: 1500 },
-    { id: 4, name: "Monitor", price: 12000 },
+  const students = [
+    { id: 1, name: "Lucky", marks: 85 },
+    { id: 2, name: "Rahul", marks: 42 },
+    { id: 3, name: "Amit", marks: 76 },
+    { id: 4, name: "Jay", marks: 35 },
   ];
 
-  const productFilter = products.filter((product) => product.price > 11000);
-
+  const filterStudent = students.filter((mark) => mark.marks >= 50);
   return (
     <div>
-      {productFilter.map((product) => {
+      {filterStudent.map((mark) => {
         return (
-          <p key={product.id}>
-            {product.name} - ₹{product.price}
+          <p key={mark.id}>
+            {mark.name}-{mark.marks}
           </p>
         );
       })}
