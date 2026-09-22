@@ -1,16 +1,29 @@
 function App() {
-  const users = [
-    { id: 1, name: "lucky", age: 20 },
-    { id: 2, name: "ratan", age: 20 },
-    { id: 3, name: "shivlal", age: 19 },
+  const students = [
+    { id: 1, name: "Lucky", marks: 85 },
+    { id: 2, name: "Ratan", marks: 42 },
+    { id: 3, name: "Shivlal", marks: 76 },
   ];
+
+  const edit = 2;
+
+  const updatedStudends = students.map((student) => {
+    if (student.id === edit) {
+      marks: 60;
+      return {
+        ...student,
+        marks: 60,
+      };
+    }
+    return student;
+  });
 
   return (
     <div>
-      {users.map((user, id) => {
+      {updatedStudends.map((student) => {
         return (
-          <p key={user.id}>
-            {user.name}-{user.age}
+          <p key={student.id}>
+            {student.name}-{student.marks}
           </p>
         );
       })}
