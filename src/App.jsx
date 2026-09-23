@@ -1,7 +1,18 @@
 function App() {
-  const students = [
-    { id: 1, name: "Lucky", marks: 85 },
-    { id: 2, name: "Ratan", marks: 42 },
-    { id: 3, name: "Shivlal", marks: 76 },
-  ];
+  function handleSubmit(e) {
+    console.log("Form Submitted");
+    e.preventDefault();
+  }
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        name: <input type="text" />
+        <br />
+        <button>Submit</button>
+      </form>
+    </div>
+  );
 }
+
+export default App;
