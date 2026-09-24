@@ -1,14 +1,19 @@
 import { useState } from "react";
-function App() {
-  const [count, setCount] = useState(0);
 
-  function increase() {
-    setCount(count + 1);
+function App() {
+  const [name, setName] = useState("Lucky");
+  const [age, setAge] = useState(20);
+
+  function handleChange() {
+    setName("Ratan");
+    setAge(21);
   }
+
   return (
     <div>
-      <h1>{count}</h1>
-      <button onClick={increase}>+</button>
+      Name: <p>{name}</p>
+      Age: <p>{age}</p>
+      <button onClick={handleChange}>Update Student</button>
     </div>
   );
 }
