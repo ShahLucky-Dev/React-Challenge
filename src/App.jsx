@@ -1,16 +1,14 @@
+import { useState } from "react";
 function App() {
-  function handleSubmit(e) {
-    console.log("Form Submitted");
-    e.preventDefault();
-  }
+  const [count, setCount] = useState(0);
 
+  function increase() {
+    setCount(count + 1);
+  }
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        name: <input type="text" />
-        <br />
-        <button>Submit</button>
-      </form>
+      <h1>{count}</h1>
+      <button onClick={increase}>+</button>
     </div>
   );
 }
