@@ -1,20 +1,21 @@
 import { useState } from "react";
 
 function App() {
-  const [student, setStudent] = useState({
-    name: "Lucky",
-    age: 20,
-  });
-  function handleChange() {
-    setStudent({ ...student, name: "Ratan" });
-  }
+  const [students, setStudents] = useState([
+    { id: 1, name: "Lucky", age: 20 },
+    { id: 2, name: "Ratan", age: 21 },
+    { id: 3, name: "Shivlal", age: 22 },
+  ]);
 
   return (
     <div>
-      Name: {student.name}
-      Age: {student.age}
-      <br />
-      <button onClick={handleChange}>Update Name</button>
+      {students.map((student) => {
+        return (
+          <p key={student.id}>
+            {student.name}-{student.age}
+          </p>
+        );
+      })}
     </div>
   );
 }
