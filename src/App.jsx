@@ -1,13 +1,20 @@
+import { useState } from "react";
+
 function App() {
-  let count = 0;
-  function handleClick() {
-    count = count + 1;
+  const [student, setStudent] = useState({
+    name: "Lucky",
+    age: 20,
+  });
+  function handleChange() {
+    setStudent({ ...student, name: "Ratan" });
   }
 
   return (
     <div>
-      <h1>{count}</h1>
-      <button onClick={handleClick}>+</button>
+      Name: {student.name}
+      Age: {student.age}
+      <br />
+      <button onClick={handleChange}>Update Name</button>
     </div>
   );
 }
