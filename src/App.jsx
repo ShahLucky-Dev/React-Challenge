@@ -3,10 +3,12 @@ function App() {
   const [students, setStudents] = useState([
     { id: 1, name: "Lucky", age: 20 },
     { id: 2, name: "Ratan", age: 21 },
+    { id: 3, name: "Shivlal", age: 22 },
   ]);
 
-  function handleAdd() {
-    setStudents([...students, { id: 3, name: "Shivlal", age: 22 }]);
+  function handleDelete(id) {
+    const newArray = students.filter((student) => student.id !== id);
+    setStudents(newArray);
   }
 
   return (
@@ -15,10 +17,10 @@ function App() {
         return (
           <p key={student.id}>
             {student.name}-{student.age}
+            <button onClick={() => handleDelete(student.id)}>Delete</button>
           </p>
         );
       })}
-      <button onClick={handleAdd}>Add Student</button>
     </div>
   );
 }
