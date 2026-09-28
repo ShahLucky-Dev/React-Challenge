@@ -1,36 +1,14 @@
 import { useState } from "react";
 function App() {
-  const [students, setStudents] = useState([
-    { id: 1, name: "Lucky", age: 20 },
-    { id: 2, name: "Ratan", age: 21 },
-    { id: 3, name: "Shivlal", age: 22 },
-  ]);
+  const [name, setName] = useState("");
 
-  function handleEdit(id) {
-    const updatedStudents = students.map((student) => {
-      if (id === student.id) {
-        return {
-          ...student,
-          age: 25,
-        };
-      }
-      return {
-        ...student,
-      };
-    });
-    setStudents(updatedStudents);
+  function handleChange(e) {
+    setName(e.target.value);
   }
-
   return (
     <div>
-      {students.map((student) => {
-        return (
-          <p key={student.id}>
-            {student.name}-{student.age}
-            <button onClick={() => handleEdit(student.id)}>Edit</button>
-          </p>
-        );
-      })}
+      <input type="text" value={name} onChange={handleChange} />
+      <h1>{name}</h1>
     </div>
   );
 }
