@@ -14,6 +14,13 @@ function App() {
     setAge(e.target.value);
   }
 
+  function handleDelete(id) {
+    const newArray = students.filter((student) => {
+      return id !== student.id;
+    });
+    setStudents(newArray);
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
     if (name === "" || age === "") {
@@ -44,6 +51,7 @@ function App() {
           return (
             <p key={std.id}>
               {std.name}-{std.age}
+              <button onClick={() => handleDelete(std.id)}>Delete</button>
             </p>
           );
         })}
