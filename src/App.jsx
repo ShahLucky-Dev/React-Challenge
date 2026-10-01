@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./App.css";
 function App() {
   const [name, setName] = useState("");
 
@@ -42,9 +43,14 @@ function App() {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <input type="text" value={name} onChange={handleChange} />
-        <br /> <input type="text" value={age} onChange={handleAge} />
-        <button>Submit</button>
+        <div className="container">
+          <input type="text" value={name} onChange={handleChange} />
+          <br />
+          <br /> <input type="text" value={age} onChange={handleAge} />
+          <br />
+          <br />
+          <button className="btnSub">Submit</button>
+        </div>
         <h1>{name}</h1>
         <p>{age}</p>
         {students.map((std) => {
