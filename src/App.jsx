@@ -22,6 +22,10 @@ function App() {
     setStudents(newArray);
   }
 
+  function handleEdit(id) {
+    console.log(id);
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
     if (name === "" || age === "") {
@@ -49,7 +53,9 @@ function App() {
           <br /> <input type="text" value={age} onChange={handleAge} />
           <br />
           <br />
-          <button className="btnSub">Submit</button>
+          <button className="btnSub" type="submit">
+            Submit
+          </button>
         </div>
         <h1>{name}</h1>
         <p>{age}</p>
@@ -57,7 +63,12 @@ function App() {
           return (
             <p key={std.id}>
               {std.name}-{std.age}
-              <button onClick={() => handleDelete(std.id)}>Delete</button>
+              <button type="button" onClick={() => handleDelete(std.id)}>
+                Delete
+              </button>
+              <button type="button" onClick={() => handleEdit(std.id)}>
+                Edit
+              </button>
             </p>
           );
         })}
