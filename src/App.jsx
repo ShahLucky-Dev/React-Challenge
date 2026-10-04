@@ -23,7 +23,11 @@ function App() {
   }
 
   function handleEdit(id) {
-    console.log(id);
+    const student = students.find((student) => {
+      return student.id === id;
+    });
+    setName(student.name);
+    setAge(student.age);
   }
 
   function handleSubmit(e) {
